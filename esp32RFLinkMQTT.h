@@ -1,11 +1,17 @@
 // Include Arduino header
 #include <PubSubClient.h>
-#include <ESP8266WiFi.h>
 #include <ArduinoOTA.h>
-#include <ESP8266WebServer.h>
-#include <ESP8266HTTPUpdateServer.h>
 #include <EEPROM.h>
- 
+ #include <WiFi.h>
+#include <PubSubClient.h>
+#include <ArduinoJson.h>
+#include <ESPmDNS.h>
+#include <HTTPClient.h>
+#include <HTTPUpdate.h>
+#include <AsyncTCP.h>
+#include <ESPAsyncWebServer.h>
+#include <Update.h>
+
 #include "Rflink.h"
 
 #define CFG_SSID_SIZE 				32
@@ -151,7 +157,7 @@ static const char htmlMenu[] PROGMEM = ""     // Menu
 	"		 });\r\n"
 	"	 };\r\n"
 	"</script>\r\n"
-	"<h1 id='menutitle'>espRFLinkMQTT</h1>\r\n"
+	"<h1 id='menutitle'>esp32RFLinkMQTT</h1>\r\n"
 	"<div class='menubar'>"
 	"<a id='menuhome' class='menu' href='.'>&#8962;<span class='showmenulabel'>Home</span></a>\r\n"
 	"<a id='menuid' class='menu' href='/idfiltering'>&#10740;<span class='showmenulabel'>ID Filtering</span></a>\r\n"
@@ -164,7 +170,7 @@ static const char htmlMenu[] PROGMEM = ""     // Menu
 
 	static const char htmlStart[] PROGMEM = ""     // Html page start part
 	"<!DOCTYPE html>\r\n<html>\r\n"
-    "<head><title>espRFLinkMQTT</title>\r\n"
+    "<head><title>esp32RFLinkMQTT</title>\r\n"
     "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\r\n"
     "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />\r\n"
 	"<link rel=\"stylesheet\" type=\"text/css\" href=\"/esp.css\">\r\n"

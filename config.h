@@ -6,7 +6,7 @@
 // Serial and hardware configuration
 //********************************************************************************
 
-//#define ENABLE_SERIAL_DEBUG					// uncomment to enable debug on debugSerialTX
+#define ENABLE_SERIAL_DEBUG					// uncomment to enable debug on debugSerialTX
 
 #ifdef ENABLE_SERIAL_DEBUG
 	HardwareSerial & debugSerialTX = Serial;	// debugSerialTX is to show information for debugging - use Serial to write on hardware serial (ESP TX pin) 
@@ -26,7 +26,7 @@ HardwareSerial & rflinkSerialTX = Serial;		// rflinkSerialTX is used for command
 
 #define WIFI_SSID ""						// WiFi network SSID for ESP8266 to connect to
 #define WIFI_PASSWORD ""					// WiFi password for the network above
-#define HOSTNAME "espRFLinkMQTT" 			// Client name used for hostname, access point name, OTA, client ID for MQTT server
+#define HOSTNAME "esp32RFLinkMQTT" 			// Client name used for hostname, access point name, OTA, client ID for MQTT server
 
 #define ENABLE_WIFI_SETTINGS_ONLINE_CHANGE
 /*
@@ -79,7 +79,7 @@ If defined (line uncommented):
 In order to avoid polluting MQTT server, it is possible with ID filtering to publish on MQTT server only information provided by some specific ID. This can be enabled or disabled online.
 */
 
-#define ID_FILTERING	false
+#define ID_FILTERING	true
 
 const _filtered_IDs filtered_IDs[] = {
 /*
