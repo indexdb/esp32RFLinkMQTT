@@ -1,6 +1,9 @@
-# espRFLinkMQTT
+# esp32RFLinkMQTT
 
-espRFLinkMQTT acts as a gateway between a [RFLink](http://rflink.nl) board and a MQTT server. It works on ESP8266: ESP01, D1 mini, NodeMCU, RFLink WiFi board, ...
+esp32RFLinkMQTT acts as a gateway between a [RFLink](http://rflink.nl) board and a MQTT server. 
+It is forked from https://github.com/seb821/espRFLinkMQTT
+
+Migration to esp32 from ESP8266 
 
 It includes the following main functions:
 
